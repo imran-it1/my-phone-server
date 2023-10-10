@@ -1,8 +1,13 @@
 const express = require("express");
 // import local phones json data
 const phones = require("./phones.json");
+// Import CORS to share data beteween same port
+const cors = require("cors");
 const app = express();
 const port = 5000;
+
+// app ke cors use korar permission deya holo
+app.use(cors());
 
 app.get("/", (req, res) => {
 	res.send("Hello from my phonesssssssss serverrrr");
